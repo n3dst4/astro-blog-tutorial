@@ -1,0 +1,12 @@
+---
+import Social from "./Social.astro";
+const platform = "github";
+const username = "lumphammer";
+---
+
+<footer>
+  <p>
+    Eat my <Social url={`https://www.${platform}.com/${username}`} text={platform} />,
+    Bite my <Social url="https://lumphammer.com" text="shiny metal website" />
+  </p>
+</footer>

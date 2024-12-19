@@ -1,0 +1,17 @@
+---
+const {url, text} = Astro.props;
+---
+
+<a target="_blank" href={url}>{text}</a>
+
+<style>
+  a {
+    color: white;
+    text-decoration: none;
+    background-color: #4c1d95;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
+
+
