@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -43,10 +44,7 @@ const skillColor = "oklch(0.8 0.3 180)";
     </style>
 	</head>
 	<body>
-    <nav>
-      <a href="/astro-blog-tutorial/">Home</a>
-      <a href="/astro-blog-tutorial/about">About</a>
-      <a href="/astro-blog-tutorial/blog">Blog</a>
+    <Navigation />
     </nav>
     <main class="container">
       <h1>{pageTitle}</h1>
