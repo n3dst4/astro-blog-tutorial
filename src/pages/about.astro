@@ -1,5 +1,17 @@
 ---
+const pageTitle = "About";
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
 
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,7 +20,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
     <nav>
@@ -17,13 +29,24 @@
       <a href="/astro-blog-tutorial/blog">Blog</a>
     </nav>
     <main class="container">
-      <h1>About Us</h1>
+      <h1>{pageTitle}</h1>
 
       <section class="aboutSection">
         <div>
           <h2>
-            <mark>Neil</mark>
+            <mark>{identity.firstName}</mark>
           </h2>
+
+          <ul>
+            <li>Hobby 1: {identity.hobbies[0]}</li>
+            <li>Hobby 2: {identity.hobbies[1]}</li>
+            <li>Hobby 3: {identity.hobbies[2]}</li>
+          </ul>
+
+          {happy && <p>I am happy</p>}
+          {finished && <p>I am finished</p>}
+          <p>My goal is to finish all over my hand in {goal} minutes or less.</p>
+
           <p>
             Neil got roped into a red-box D&D game one rainy lunchtime at
             school in the 1980s and never quite got over it. TTRPGs have been
