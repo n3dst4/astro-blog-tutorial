@@ -1,19 +1,19 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogSlug from "../components/BlogSlug.astro";
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+);
 ---
 
 <BaseLayout title="Blog">
   <ul>
-    <li>
-      <a href="/astro-blog-tutorial/posts/post-1">My First Blog Post</a>
 
-    </li>
-    <li>
-      <a href="/astro-blog-tutorial/posts/post-2">My Second Blog Post</a>
-    </li>
-    <li>
-      <a href="/astro-blog-tutorial/posts/post-3">My Third Blog Post</a>
-    </li>
+    {
+      allPosts.map((post: any) => (
+        <BlogSlug url={post.url} title={post.frontmatter.title} />
+      ))
+    }
   </ul>
 </BaseLayout>
